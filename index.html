@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chapter 10 Practice: What Did You Do Yesterday?</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1ff;--card:#fff;--tx:#23214d;--mu:#6b6890;--ln:#e2ddff;--pr:#6c4bff;--co:#ff5a5f;--su:#ffc93c;--te:#14b8a6;--ok:#12a07a;--bad:#e5484d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15132e;--card:#211f45;--tx:#f1efff;--mu:#a9a5d6;--ln:#38346b}}
+:root[data-theme="dark"]{--bg:#15132e;--card:#211f45;--tx:#f1efff;--mu:#a9a5d6;--ln:#38346b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Fredoka,"Segoe UI",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:740px;margin:0 auto;padding:16px}.card{background:var(--card);border:2px solid var(--ln);border-radius:22px;padding:22px;margin-bottom:16px}
+h1{font-size:clamp(26px,7vw,40px);line-height:1.1;margin:0 0 8px}h2{margin:0 0 4px;font-size:22px}
+.rb{background:linear-gradient(90deg,var(--co),var(--su),var(--te),var(--pr));-webkit-background-clip:text;background-clip:text;color:transparent}
+p{margin:0 0 12px;color:var(--mu)}label{font-weight:600;display:block;margin-top:8px}
+input,select{font:inherit;font-size:17px;padding:8px 12px;border-radius:12px;border:2px solid var(--ln);background:var(--bg);color:var(--tx)}
+.f input{width:100%;margin:4px 0 8px}.g3{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.g3 .w{grid-column:1/-1}
+input:focus,select:focus,button:focus-visible{outline:3px solid var(--su);outline-offset:2px}
+.btn{font:inherit;font-weight:600;font-size:17px;border:0;border-radius:14px;padding:12px 22px;cursor:pointer;color:#fff;background:var(--pr);box-shadow:0 4px 0 rgba(0,0,0,.18)}
+.btn.co{background:var(--co)}.btn.te{background:var(--te)}.btn.gh{background:transparent;color:var(--tx);border:2px solid var(--ln);box-shadow:none}.btn:disabled{opacity:.4}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-top:16px}
+.bar{height:12px;background:var(--ln);border-radius:9px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--co),var(--su),var(--te));transition:width .3s}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.pills button{font:inherit;width:36px;height:36px;border-radius:50%;border:2px solid var(--ln);background:transparent;color:var(--mu);cursor:pointer}
+.pills .c{background:var(--pr);border-color:var(--pr);color:#fff}.pills .d{border-color:var(--te);color:var(--te)}
+.it{padding:10px 0;border-top:1px dashed var(--ln);font-size:18px}.it .n{color:var(--mu);margin-right:6px;font-weight:600}.it input{width:9em;max-width:100%;margin:2px 4px}.it select{margin:2px 4px}
+.warn{color:var(--co);font-weight:600;margin-top:12px}.ins{color:var(--mu);margin:0 0 6px}
+.ring{width:170px;height:170px;border-radius:50%;margin:8px auto 14px;display:grid;place-items:center;background:conic-gradient(var(--c) calc(var(--p)*1%),var(--ln) 0)}
+.ring div{width:132px;height:132px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:44px;font-weight:700}
+.stat{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.stat span{padding:6px 14px;border-radius:99px;font-weight:600;background:var(--bg)}
+.wr{padding:6px 0;border-top:1px dashed var(--ln)}.wr b{color:var(--ok)}.wr s{color:var(--bad)}
+.certwrap{container-type:inline-size;margin:18px 0}
+.cert{position:relative;aspect-ratio:1.414/1;padding:1.6cqw;border-radius:2cqw;background:conic-gradient(from 0deg,#ff5a5f,#ffc93c,#14b8a6,#3b82f6,#8b5cf6,#ec4899,#ff5a5f);color:#2a1b5e;overflow:hidden;box-shadow:0 10px 30px rgba(108,75,255,.35)}
+.ci{position:relative;height:100%;border-radius:1.2cqw;background:radial-gradient(circle at 0 0,#ffe3e6 0,transparent 30%),radial-gradient(circle at 100% 100%,#d6f7f1 0,transparent 32%),radial-gradient(circle at 100% 0,#fff2c4 0,transparent 26%),radial-gradient(circle at 0 100%,#e5dcff 0,transparent 28%),#fffdf7;text-align:center;padding:3cqw 6cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;border:.5cqw dashed #b9a6ff;overflow:hidden}
+.ci>*{position:relative;z-index:1}.cf{position:absolute;z-index:0!important;border-radius:2px;opacity:.75}
+.c1{font-size:4.6cqw;font-weight:700;letter-spacing:.3cqw;background:linear-gradient(90deg,#ff5a5f,#f59e0b,#14b8a6,#6c4bff,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
+.c2{font-size:1.9cqw;margin:.6cqw 0 0;color:#5b4f99}.cn{font-family:Pacifico,cursive;font-size:6.2cqw;line-height:1.3;color:#e2367a;margin:.4cqw 0;max-width:100%;overflow-wrap:anywhere}
+.c3{font-size:1.9cqw;color:#3b3170;max-width:85%;margin:0}.cs{font-size:8.5cqw;font-weight:700;line-height:1;margin:.8cqw 0;color:#6c4bff;text-shadow:.4cqw .4cqw 0 #ffc93c}
+.cfoot{display:flex;justify-content:space-between;align-items:flex-end;width:100%;margin-top:1.4cqw;font-size:1.6cqw}.cfoot div{min-width:22cqw;border-top:.2cqw solid #6c4bff;padding-top:.4cqw;color:#5b4f99}
+.seal{width:12cqw;height:12cqw;border-radius:50%;display:grid;place-items:center;text-align:center;font-size:1.5cqw;font-weight:700;color:#5a3a00;background:radial-gradient(circle,#fff3b0,#ffc93c 60%,#f59e0b);border:.5cqw solid #fff;box-shadow:0 0 0 .4cqw #f59e0b,0 .6cqw 1.4cqw rgba(0,0,0,.25)}.seal big{display:block;font-size:4.4cqw;line-height:1}
+@media print{body *{visibility:hidden}.certwrap,.certwrap *{visibility:visible}.certwrap{position:absolute;left:0;top:0;width:100%;margin:0}@page{size:landscape;margin:0}.cert{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none}}
+</style></head><body><div class="wrap" id="app"></div>
+<script>
+const W=["was","were"],CL=["clinic","patients","doctor","temperature","medicine","rest","bed"];
+const SEC=[
+{t:"A. Regular Verbs",i:"Change to the past form (Yesterday we ...).",items:[["agree → ___","agreed"],["need → ___","needed"],["appear → ___","appeared"],["try → ___","tried"],["say → ___","said"],["cry → ___","cried"],["pay → ___","paid"],["look → ___","looked"],["ask → ___","asked"],["stop → ___","stopped"]]},
+{t:"B. Irregular Verbs",i:"Change to the past form (Yesterday we ...).",items:[["take → ___","took"],["read → ___","read"],["sleep → ___","slept"],["make → ___","made"],["come → ___","came"],["have → ___","had"],["go → ___","went"],["see → ___","saw"],["do → ___","did"],["feel → ___","felt"]]},
+{t:"C. Hospital Story",i:"Choose the correct word from the list.",items:[["Ella was not feeling well. Her father took her to the nearby ___.","clinic",CL],["There were many ___ waiting to see the doctor.","patients",CL],["They were waiting to see the ___.","doctor",CL],["The doctor took Ella's ___. She had a high fever.","temperature",CL],["The doctor gave her some ___.","medicine",CL],["He advised her to ___ in bed.","rest",CL]]},
+{t:"D. Performance Day",i:"Fill in the blanks with the past forms (was/were/didn't/had).",items:[["It was 9 a.m. Our school ___ holding a special event.","was"],["It ___ the Performance Day.","was"],["Every student ___ taking part in the event.","was"],["Some students ___ playing chess.","were"],["Some others ___ taking part in face painting.","were"],["I ___ working with my team.","was"],["We ___ doing an experiment.","were"],["Some students ___ making vases with clay.","were"],["The weather ___ good.","was"],["It ___ rain.","didn't|did not"],["The sun ___ shining.","was"],["We ___ all happy.","were"],["We ___ a good time.","had"]]},
+{t:"E. Was or Were",i:"Choose the correct form.",items:[["While you ___ sleeping, I was watching TV.","were",W],["While you were sleeping, I ___ watching TV.","was",W],["The students ___ talking when the teacher came.","were",W],["What ___ you doing when the fire began?","were",W],["A thief broke in our house while we ___ sleeping.","were",W],["Mr. Turner ___ having lunch when a jet crushed his house.","was",W],["___ the weather fine yesterday?","was",W]]},
+{t:"F. Simple Past / Past Continuous",i:"Write the correct form of the verb.",items:[["While we were watching TV, a thief ___ (break) into our house and ___ (steal) our gas stove.","broke;stole"],["The boy ___ (walk) on the pavement when a bicycle ___ (hit) him from behind.","was walking;hit"],["I ___ (study) for my math test while my brother ___ (watch) a soccer game on TV.","was studying;was watching"],["Someone ___ (leave) this message on your table while you ___ (be) out.","left;were"],["Who ___ you ___ (talk) to on the phone when I came in?","were;talking"]]},
+{t:"G. Nindya's Letter",i:"Fill in the blanks with the correct forms of the verbs.",items:[["It ___ (happen) the day after my mother and I ___ (arrive) in San Francisco.","happened;arrived"],["My father ___ (take) us sightseeing in a rented car.","took"],["My dad ___ (stay) in the car while my mom and I got out.","stayed"],["We were taking pictures when I ___ (spot) a man in his sports gear.","spotted"],["We were surprised when he suddenly ___ (approach) us.","approached"],["We ___ (think) he was going to harm us, and he ___ (cannot) say a word.","thought;couldn't|could not"],["He ___ (look) so menacing with those cycling-glasses.","looked"],["He ___ (explain) that he just ___ (want) to help us.","explained;wanted"],["We ___ (give) him our camera and ___ (let) him take our pictures.","gave;let"],["As it ___ (turn) out, he only ___ (want) to help us.","turned;wanted"]]},
+{t:"H. Martin & Lucy",i:"Read Martin's journal (Monday: dentist at four; Tuesday: soccer training; Wednesday: cinema with Rick; Thursday: birthday at McDonald's) and Lucy's list (✔ borrowed a storybook, helped mother in the garden, played tennis at Marina Sport Center, answered 5 math problems, watched National Geographic; ✘ cleaned her room).",items:[["On Monday at four, Martin went to the ___.","dentist",["dentist","gym","cinema"]],["On Tuesday afternoon he was training at the ___.","soccer field",["soccer field","gym","library"]],["On Wednesday he was at the ___ with Rick.","cinema",["cinema","hospital","gym"]],["On Thursday evening he was at ___.","McDonald's",["McDonald's","the dentist","the gym"]],["Did Lucy clean her room? No, she ___.","didn't",["did","didn't","wasn't"]],["What did Lucy borrow from the library? A ___.","storybook",["storybook","magazine","newspaper"]],["Who did she help in the garden? Her ___.","mother",["mother","father","sister"]],["She played tennis in the ___.","Marina Sport Center",["Marina Sport Center","hospital","library"]],["She watched ___ on TV.","National Geographic",["National Geographic","a film","the news"]]]},
+{t:"I. Review",i:"Choose the correct answer.",items:[["Tina: What were you doing when I called you? Nova: ___","I was taking a bath.",["I was taking a bath.","I was doing fine.","I didn't call you.","I was glad."]],["The girls were dancing when the visitors ___ into the hall.","came",["come","came","coming","to come"]],["The people were ___ soundly when the earthquake happened.","sleeping",["slept","sleep","to sleep","sleeping"]],["The cat was chasing the mouse when it ___ the vase.","broke",["break","broke","broken","breaking"]],["Diana ___ the house last night.","left",["left","leave","leaving","to leave"]],["Did you ___ your grandparents last week?","visit",["visit","visited","to visit","visiting"]],["Where ___ you last night? I was looking for you.","were",["did","are","was","were"]],["Last year the celebration was fun. We ___ a lot of great competitions.","had",["to have","having","have","had"]],["I ___ the letter two days ago.","sent",["sending","to send","send","sent"]],["They didn't come because we didn't ___ them.","invite",["invite","invited","inviting","to invite"]]]}
+];
+let G=0;SEC.forEach(s=>s.items=s.items.map(([t,a,o])=>({t,o,a:a.split(";").map(x=>x.split("|")),g:G++})));
+const TOT=SEC.reduce((n,s)=>n+s.items.reduce((m,i)=>m+i.a.length,0),0),PASS=80;
+let S={scr:"start",id:{n:"",k:"",a:""},a:{},st:0,warn:false,res:null};
+const app=document.getElementById("app"),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const nz=s=>(s||"").toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g," ").trim();
+const draw=()=>{({start:vStart,quiz:vQuiz,result:vResult})[S.scr]();window.scrollTo(0,0)};
+function vStart(){const d=S.id;app.innerHTML=`<div class="card f"><h1 class="rb">What Did You Do Yesterday?</h1>
+<p>Chapter 10 Practice: Past Simple &amp; Past Continuous (${TOT} questions in ${SEC.length} parts). Answer everything, then press “Submit” to see your score. A score of 80 or more earns a certificate.</p>
+<div class="g3"><div class="w"><label for="n">Full name</label><input id="n" maxlength="40" value="${esc(d.n)}" autocomplete="name"></div>
+<div><label for="k">Class</label><input id="k" maxlength="8" placeholder="e.g. 8A" value="${esc(d.k)}"></div>
+<div><label for="a">Attendance no.</label><input id="a" inputmode="numeric" maxlength="3" value="${esc(d.a)}"></div></div>
+<button class="btn co" onclick="begin()">Start</button><div id="er" class="warn"></div></div>`}
+function begin(){const g=i=>document.getElementById(i).value.trim();S.id={n:g("n"),k:g("k"),a:g("a")};
+if(!S.id.n||!S.id.k||!S.id.a){document.getElementById("er").textContent="Name, class, and attendance number are required.";return}
+S.a={};S.st=0;S.warn=false;S.scr="quiz";draw()}
+const filled=()=>Object.values(S.a).filter(v=>v&&v.trim()).length;
+function vQuiz(){const s=SEC[S.st],last=S.st===SEC.length-1;let n=0;
+const inp=(g,k,o)=>{const v=S.a[g+"."+k]||"",key=`S.a['${g}.${k}']=this.value;upd()`;
+return o?`<select aria-label="answer" onchange="${key}"><option value="">choose…</option>${o.map(x=>`<option ${v===x?"selected":""}>${esc(x)}</option>`).join("")}</select>`:`<input aria-label="answer" autocomplete="off" autocapitalize="off" spellcheck="false" value="${esc(v)}" oninput="${key}">`};
+app.innerHTML=`<div class="card"><div class="row" style="margin:0"><b>Part ${S.st+1} / ${SEC.length}</b><span id="pc" style="color:var(--mu)"></span></div>
+<div class="bar"><i id="pb"></i></div><div class="pills">${SEC.map((x,i)=>`<button class="${i===S.st?"c":""}" onclick="S.st=${i};vQuiz()" aria-label="${esc(x.t)}">${i+1}</button>`).join("")}</div></div>
+<div class="card"><h2 class="rb">${esc(s.t)}</h2><p class="ins">${esc(s.i)}</p>
+${s.items.map(it=>{n++;const p=it.t.split("___");return`<div class="it"><span class="n">${n}.</span>${p.map((x,k)=>esc(x)+(k<p.length-1?inp(it.g,k,it.o):"")).join("")}</div>`}).join("")}
+<div class="row"><button class="btn gh" onclick="S.st--;vQuiz()" ${S.st?"":"disabled"}>Previous</button>
+${last?`<button class="btn te" onclick="submit()">Submit</button>`:`<button class="btn" onclick="S.st++;vQuiz()">Next</button>`}</div>
+<div id="wn" class="warn"></div></div>`;upd()}
+function upd(){const f=filled(),pc=document.getElementById("pc");if(pc){pc.textContent=f+" of "+TOT+" answered";document.getElementById("pb").style.width=f/TOT*100+"%"}}
+function submit(){const left=TOT-filled();if(left&&!S.warn){S.warn=true;document.getElementById("wn").textContent=`${left} blank(s) are still empty. Check the other parts or press “Submit” again to submit anyway.`;return}
+let ok=0;const wr=[],per=SEC.map(s=>{let c=0,t=0;s.items.forEach((it,ix)=>it.a.forEach((alts,k)=>{t++;const v=nz(S.a[it.g+"."+k]);if(alts.some(x=>nz(x)===v)){c++;ok++}else wr.push(`${s.t.split(".")[0]}${ix+1}${it.a.length>1?"."+(k+1):""}`+`|${S.a[it.g+"."+k]||"—"}|${alts[0]}`)}));return[s.t,c,t]});
+S.res={ok,score:Math.round(ok/TOT*100),wr,per};S.scr="result";draw()}
+function vResult(){const {ok,score,wr,per}=S.res,pass=score>=PASS,d=S.id;
+app.innerHTML=`<div class="card" style="text-align:center"><h1 class="rb">${pass?"Congratulations, ":"Keep going, "}${esc(d.n)}!</h1><p>Class ${esc(d.k)} · No. ${esc(d.a)}</p>
+<div class="ring" style="--p:${score};--c:${pass?"var(--te)":"var(--co)"}"><div>${score}</div></div>
+<div class="stat"><span style="color:var(--ok)">Correct ${ok}</span><span style="color:var(--bad)">Wrong ${TOT-ok}</span></div>
+<p style="margin-top:12px">${pass?"You reached 80. Your certificate is below.":"The minimum score for a certificate is 80. Review your mistakes below, then try again."}</p>
+<button class="btn co" onclick="S.scr='quiz';S.a={};S.st=0;S.warn=false;draw()">Try again</button></div>
+${pass?cert(score)+`<div class="row" style="justify-content:center;margin:0 0 16px"><button class="btn te" onclick="try{window.print()}catch(e){alert('Use a screenshot to save your certificate.')}">Print / save as PDF</button></div>`:""}
+<div class="card"><h2>Score by part</h2>${per.map(p=>`<div class="wr">${esc(p[0])}: <b>${p[1]}/${p[2]}</b></div>`).join("")}</div>
+<div class="card"><h2>Answers to review</h2>${wr.length?wr.map(w=>{const[a,b,c]=w.split("|");return`<div class="wr">${esc(a)}: <s>${esc(b)}</s> → <b>${esc(c)}</b></div>`}).join(""):"<p>None. Perfect!</p>"}</div>`}
+function cert(score){const dt=new Date().toLocaleDateString("en-US",{day:"numeric",month:"long",year:"numeric"}),pr=score>=90?"Excellent":"Very Good",d=S.id,cl=["#ff5a5f","#ffc93c","#14b8a6","#6c4bff","#ec4899","#3b82f6"];
+const cf=Array.from({length:26},(_,i)=>{const z=1+Math.random()*1.4;return`<span class="cf" style="left:${Math.random()*96}%;top:${Math.random()*94}%;width:${z}cqw;height:${z*(.4+Math.random())}cqw;background:${cl[i%6]};transform:rotate(${Math.random()*180}deg)"></span>`}).join("");
+return`<div class="certwrap"><div class="cert"><div class="ci">${cf}<div class="c1">CERTIFICATE OF ACHIEVEMENT</div><div class="c2">Past Simple &amp; Past Continuous</div>
+<p class="c2" style="margin-top:1.4cqw">Proudly presented to</p><div class="cn">${esc(d.n)}</div><p class="c2" style="margin:0 0 .6cqw">Class ${esc(d.k)} · Attendance No. ${esc(d.a)}</p>
+<p class="c3">for successfully completing the practice <b>Chapter 10: What Did You Do Yesterday?</b> with a score of</p>
+<div class="cs">${score}<span style="font-size:3cqw;text-shadow:none;color:#5b4f99"> / 100</span></div><p class="c3">Grade: <b>${pr}</b></p>
+<div class="cfoot"><div>${dt}</div><span class="seal"><span><big>★</big>${pr}</span></span><div>English Teacher</div></div></div></div></div>`}
+draw();
+</script></body></html>
